@@ -53,10 +53,16 @@ return {
 			}
 
 			-- Breakpoint signs
-			vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticError" })
-			vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DiagnosticWarn" })
-			vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DiagnosticInfo" })
-			vim.fn.sign_define("DapStopped", { text = "→", texthl = "DiagnosticOk", linehl = "DapStoppedLine" })
+			vim.api.nvim_set_hl(0, "DapBreakpointSign", { fg = "#e06c75", bold = true })
+			vim.api.nvim_set_hl(0, "DapCondBreakpointSign", { fg = "#e5c07b", bold = true })
+			vim.api.nvim_set_hl(0, "DapLogPointSign", { fg = "#61afef", bold = true })
+			vim.api.nvim_set_hl(0, "DapStoppedSign", { fg = "#98c379", bold = true })
+			vim.api.nvim_set_hl(0, "DapStoppedLine", { bg = "#2e4234" })
+
+			vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DapBreakpointSign", numhl = "DapBreakpointSign" })
+			vim.fn.sign_define("DapBreakpointCondition", { text = "◆", texthl = "DapCondBreakpointSign", numhl = "DapCondBreakpointSign" })
+			vim.fn.sign_define("DapLogPoint", { text = "◉", texthl = "DapLogPointSign", numhl = "DapLogPointSign" })
+			vim.fn.sign_define("DapStopped", { text = "→", texthl = "DapStoppedSign", linehl = "DapStoppedLine", numhl = "DapStoppedSign" })
 
 			-- Keymaps
 			local map = function(keys, func, desc)
