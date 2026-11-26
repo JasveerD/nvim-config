@@ -2,7 +2,7 @@
   <img src="https://neovim.io/logos/neovim-mark-flat.png" width="80" />
 </p>
 
-<h1 align="center">nvim-config</h1>
+<h1 align="center">nvim-config for MacOS</h1>
 
 <p align="center">
   <b>A modular Neovim configuration for C/C++, Python, Rust, and more.</b><br>
